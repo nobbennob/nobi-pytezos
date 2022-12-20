@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.7.3](https://github.com/baking-bad/pytezos/compare/3.7.2...3.7.3) (2022-12-20)
+
+### Fixed
+
+* Added new reserved entrypoint `deposit` which changes the way forging works
+* Update test container version
+* Fixed error message formatting in `wait_operations` helper (@owen9825)
+
 ## [3.7.2](https://github.com/baking-bad/pytezos/compare/3.7.1...3.7.2) (2022-11-22)
 
 ### Added
