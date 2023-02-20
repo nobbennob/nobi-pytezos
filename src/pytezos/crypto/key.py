@@ -2,6 +2,7 @@ import binascii
 import hashlib
 import json
 from getpass import getpass
+from hashlib import blake2b
 from os import environ as env
 from os.path import abspath
 from os.path import expanduser
@@ -11,7 +12,6 @@ from typing import Optional
 from typing import Union
 
 from mnemonic import Mnemonic
-from pyblake2 import blake2b  # type: ignore
 
 from pytezos.crypto.encoding import base58_decode
 from pytezos.crypto.encoding import base58_encode
@@ -409,7 +409,7 @@ class Key(metaclass=InlineDocstring):
 
         :returns: the public key hash for this key
         """
-        pkh = blake2b(data=self.public_point, digest_size=20).digest()
+        pkh = blake2b(self.public_point, digest_size=20).digest()
         prefix = {b'ed': b'tz1', b'sp': b'tz2', b'p2': b'tz3'}[self.curve]
         return base58_encode(pkh, prefix).decode()
 
@@ -421,9 +421,9 @@ class Key(metaclass=InlineDocstring):
         if not self.activation_code:
             raise ValueError("Activation code is undefined")
 
-        pkh = blake2b(data=self.public_point, digest_size=20).digest()
+        pkh = blake2b(self.public_point, digest_size=20).digest()
         key = bytes.fromhex(self.activation_code)
-        blinded_pkh = blake2b(data=pkh, key=key, digest_size=20).digest()
+        blinded_pkh = blake2b(pkh, key=key, digest_size=20).digest()
         return base58_encode(blinded_pkh, b'btz1').decode()
 
     def sign(self, message: Union[str, bytes], generic: bool = False):

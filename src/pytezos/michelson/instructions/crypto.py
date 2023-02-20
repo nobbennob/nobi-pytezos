@@ -1,3 +1,4 @@
+from hashlib import sha3_256
 from hashlib import sha256
 from hashlib import sha512
 from typing import Callable
@@ -5,11 +6,11 @@ from typing import List
 from typing import Tuple
 from typing import cast
 
-import sha3  # type: ignore
 from py_ecc import optimized_bls12_381 as bls12_381
 from py_ecc.fields import optimized_bls12_381_FQ12 as FQ12
 
 from pytezos.context.abstract import AbstractContext
+from pytezos.crypto.keccak import Keccak256
 from pytezos.crypto.key import Key
 from pytezos.crypto.key import blake2b_32
 from pytezos.michelson.instructions.base import MichelsonInstruction
@@ -59,14 +60,14 @@ class Sha512Instruction(MichelsonInstruction, prim='SHA512'):
 class Sha3Instruction(MichelsonInstruction, prim='SHA3'):
     @classmethod
     def execute(cls, stack: MichelsonStack, stdout: List[str], context: AbstractContext):
-        execute_hash(cls.prim, stack, stdout, lambda x: sha3.sha3_256(bytes(x)).digest())  # type: ignore
+        execute_hash(cls.prim, stack, stdout, lambda x: sha3_256(bytes(x)).digest())  # type: ignore
         return cls(stack_items_added=1)
 
 
 class KeccakInstruction(MichelsonInstruction, prim='KECCAK'):
     @classmethod
     def execute(cls, stack: MichelsonStack, stdout: List[str], context: AbstractContext):
-        execute_hash(cls.prim, stack, stdout, lambda x: sha3.keccak_256(bytes(x)).digest())  # type: ignore
+        execute_hash(cls.prim, stack, stdout, lambda x: Keccak256(bytes(x)).digest())  # type: ignore
         return cls(stack_items_added=1)
 
 
