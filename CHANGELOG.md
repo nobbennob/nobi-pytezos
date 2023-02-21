@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.8.0](https://github.com/baking-bad/pytezos/compare/3.7.4...3.8.0) (2023-02-21)
+
+### Fixed
+
+* Conflicting `bson` module is replaced by an alternative
+
+### Added
+
+* Compatibility with Python 3.11
+
+### Changed
+
+* Docker images are significantly smaller (231MB -> 107MB for `pytezos`, 834MB -> 234MB for `michelson-kernel`)
+
 ## [3.7.4](https://github.com/baking-bad/pytezos/compare/3.7.3...3.7.4) (2023-01-12)
 
 ### Fixed
