@@ -1,6 +1,6 @@
 # Changelog
 
-## [3.9.0](https://github.com/baking-bad/pytezos/compare/3.8.0...3.9.0) (2023-03-18)
+## [3.9.0](https://github.com/baking-bad/pytezos/compare/3.8.0...3.9.0) (2023-03-29)
 
 ### Fixed
 
