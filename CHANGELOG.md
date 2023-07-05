@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.10.1](https://github.com/baking-bad/pytezos/compare/3.10.1...3.10.2) (2023-07-05)
+
+### Fixed
+
+* Missing validation pass info for sr operation kinds
+
+
 ## [3.10.1](https://github.com/baking-bad/pytezos/compare/3.10.0...3.10.1) (2023-07-04)
 
 ### Added
