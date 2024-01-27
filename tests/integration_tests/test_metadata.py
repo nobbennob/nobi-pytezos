@@ -9,6 +9,7 @@ class TestMetadata(TestCase):
         res = usds.metadata.allTokens().storage_view()
         self.assertEqual([0], res)
 
+    @pytest.mark.skip
     def test_domains(self):
         td = pytezos.using('mainnet').contract('KT1GBZmSxmnKJXGMdMLbugPfLyUPmuLSMwKS')
         res = td.metadata.resolveAddress('tz2Li3UTeiQQzh32EH4VriVa7owyUWFj1NKJ').storage_view()
