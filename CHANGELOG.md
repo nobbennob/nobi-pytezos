@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.11.0](https://github.com/baking-bad/pytezos/compare/3.10.3...3.11.0) (2024-02-05)
+
+### Added
+
+* Compatibility with Oxfordnet protocol
+* Octez binaries updated to v19.0
+
 ## [3.10.3](https://github.com/baking-bad/pytezos/compare/3.10.2...3.10.3) (2023-11-27)
 
 ### Fixed

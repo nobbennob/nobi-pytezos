@@ -23,6 +23,8 @@ from pytezos.rpc.kind import validation_passes
 from pytezos.sandbox.parameters import protocol_version
 from pytezos.sandbox.parameters import sandbox_params
 
+bson.encoder.encoders[int] = bson.encoder.encoders[float]
+
 
 class BlockHeader(ContextMixin):
     """Representation of block creation call"""
@@ -110,6 +112,7 @@ class BlockHeader(ContextMixin):
             "payload_hash": "vh1g87ZG6scSYxKhspAUzprQVuLAyoa5qMBKcUfjgnQGnFb3dJcG",  # dummy payload (zeroes)
             "payload_round": 0,
             "liquidity_baking_toggle_vote": "off",
+            "adaptive_issuance_vote": "off",
         }
 
         return BlockHeader(
