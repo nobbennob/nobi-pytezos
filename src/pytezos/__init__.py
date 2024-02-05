@@ -24,6 +24,6 @@ from pytezos.michelson.types.base import MichelsonType
 from pytezos.michelson.types.base import Undefined
 from pytezos.michelson.types.core import Unit
 
-__version__ = '3.10.3'
+__version__ = '3.11.0'
 
 pytezos = PyTezosClient()
