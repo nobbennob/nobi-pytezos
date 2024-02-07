@@ -11,7 +11,7 @@ TAG=latest
 ##
 
 help:              ## Show this help (default)
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+	@grep -Fh "##" $(MAKEFILE_LIST) | grep -Fv grep -F | sed -e 's/\\$$//' | sed -e 's/##//'
 
 all:               ## Run a whole CI pipeline: lint, run tests, build docs
 	make install lint test docs
@@ -31,8 +31,8 @@ install:           ## Install project dependencies
 	poetry install \
 	`if [ "${DEV}" = "0" ]; then echo "--no-dev"; fi`
 
-## Lint with all tools
-lint: isort black ruff mypy
+lint:              ## Lint with all tools
+	make isort black ruff mypy
 
 test:              ## Run test suite
 	# FIXME: https://github.com/pytest-dev/pytest-xdist/issues/385#issuecomment-1177147322
@@ -61,7 +61,7 @@ isort:             ## Format with isort
 black:             ## Format with black
 	poetry run black src tests scripts --exclude ".*/docs.py"
 
-ruff:             ## Lint with ruff
+ruff:              ## Lint with ruff
 	poetry run ruff check src tests scripts
 
 mypy:              ## Lint with mypy
@@ -95,7 +95,7 @@ release-major:     ## Release major version
 clean:             ## Remove all files from .gitignore except for `.venv`
 	git clean -xdf --exclude=".venv"
 
-update:         ## Update dependencies, export requirements.txt
+update:            ## Update dependencies, export requirements.txt
 	poetry update
 
 	cp pyproject.toml pyproject.toml.bak
