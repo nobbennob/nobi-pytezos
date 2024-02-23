@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pytezos"
-version = "3.11.2"
+version = "3.11.3"
 description = "Python toolkit for Tezos"
 license = "MIT"
 authors = [
