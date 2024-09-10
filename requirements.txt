@@ -19,7 +19,7 @@ click==8.1.7 ; python_full_version >= "3.8.1" and python_version < "3.13"
 coincurve>=15.0.1,<18.0.0; python_full_version >= "3.8.1" and python_version < "3.13"
 colorama==0.4.6 ; python_full_version >= "3.8.1" and python_version < "3.13" and (platform_system == "Windows" or sys_platform == "win32")
 comm==0.2.2 ; python_full_version >= "3.8.1" and python_version < "3.13"
-cryptography<=43.0.0,>=42.0.0 ; python_full_version >= "3.8.1" and python_version < "3.13"
+cryptography<=42.0.0,>=3.4.6 ; python_full_version >= "3.8.1" and python_version < "3.13"
 cytoolz==0.12.3 ; python_full_version >= "3.8.1" and python_version < "3.13" and implementation_name == "cpython"
 debugpy==1.8.5 ; python_full_version >= "3.8.1" and python_version < "3.13"
 decorator==5.1.1 ; python_full_version >= "3.8.1" and python_version < "3.13"
