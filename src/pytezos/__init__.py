@@ -26,6 +26,6 @@ from pytezos.michelson.types.base import MichelsonType
 from pytezos.michelson.types.base import Undefined
 from pytezos.michelson.types.core import Unit
 
-__version__ = importlib.metadata.version('pytezos')
+__version__ = importlib.metadata.version('nobi-pytezos')
 
 pytezos = PyTezosClient()
